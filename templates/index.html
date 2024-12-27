@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Search Product</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="form">
+        <img src="{{url_for('static', filename='images/logo1.png')}}" alt="No Logo">
+        <form action="/review" method="post">
+            {% for message in get_flashed_messages()%}
+            <p>{{message}}</p>
+            {% endfor %}
+            <input type="text" name="content" id="content">
+            <br>
+            <input type="submit" value="Search" id="submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
